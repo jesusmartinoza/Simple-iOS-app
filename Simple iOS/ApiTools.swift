@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 class ApiTools {
-    static var url = "https://jsonplaceholder.typicode.com/"
+    static var BASE_URL = "https://jsonplaceholder.typicode.com"
 }

@@ -17,18 +17,35 @@ class Album {
     var title: String?
     var userId: Int = -1
     
+    /**
+     Create new instance with default values
+     */
+    init() {
+        
+    }
+    
+    /**
+     Create new Album instance using dictionary
+     
+     - Parameter json: Dictionary with info
+     */
     init(json: Dictionary<String, Any>) {
         id = json["id"] as! Int
         title = json["title"] as! String
     }
     
     /**
-     * Get all albums from API
+     Get albums from API. Includes pagination.
+     
+     - Parameter start: Index of first album to retrieve.
+     - Parameter onCompletion: Callback with data
+     
+     #TODO: Handle HTTP error / Parse error
      */
-    static func getAllFromAPI(start: Int = 0, onCompletion : ServiceResponse?)  {
+    static func fetch(start: Int = 0, onCompletion : ServiceResponse?)  {
         let params : Parameters = ["_start" : start, "_limit": 10]
         
-        Alamofire.request(ApiTools.url + "albums", method: .get, parameters: params)
+        Alamofire.request(ApiTools.BASE_URL + "/albums", method: .get, parameters: params)
             .validate()
             .responseJSON { response in
                 var albums = [Album]()

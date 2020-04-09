@@ -11,7 +11,7 @@
 		73C952CEB02DA976A36A6D32 /* Pods_Simple_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 900EE4BC5075A554FF75003B /* Pods_Simple_iOSUITests.framework */; };
 		9A04CD58243E607300E53F2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04CD57243E607300E53F2A /* AppDelegate.swift */; };
 		9A04CD5A243E607300E53F2A /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04CD59243E607300E53F2A /* AlbumsViewController.swift */; };
-		9A04CD5C243E607300E53F2A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04CD5B243E607300E53F2A /* SecondViewController.swift */; };
+		9A04CD5C243E607300E53F2A /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04CD5B243E607300E53F2A /* PhotosViewController.swift */; };
 		9A04CD5F243E607300E53F2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A04CD5D243E607300E53F2A /* Main.storyboard */; };
 		9A04CD61243E607400E53F2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A04CD60243E607400E53F2A /* Assets.xcassets */; };
 		9A04CD64243E607400E53F2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A04CD62243E607400E53F2A /* LaunchScreen.storyboard */; };
@@ -26,6 +26,10 @@
 		9AD4F733243E7BCA0075A198 /* LoadingViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD4F731243E7BCA0075A198 /* LoadingViewCell.xib */; };
 		9AD4F742243EDAC80075A198 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD4F741243EDAC80075A198 /* Album.swift */; };
 		9AD4F74A243EDE610075A198 /* ApiTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD4F749243EDE610075A198 /* ApiTools.swift */; };
+		9AD4F74D243F7AC30075A198 /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD4F74B243F7AC30075A198 /* PhotoViewCell.swift */; };
+		9AD4F74E243F7AC30075A198 /* PhotoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD4F74C243F7AC30075A198 /* PhotoViewCell.xib */; };
+		9AD4F750243F7D6A0075A198 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD4F74F243F7D6A0075A198 /* Photo.swift */; };
+		9AD4F752243F8A360075A198 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD4F751243F8A360075A198 /* Extensions.swift */; };
 		A8A2866C90CE2C4BE79ED07A /* Pods_Simple_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E5198160A6777B7A076073 /* Pods_Simple_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +61,7 @@
 		9A04CD54243E607300E53F2A /* Simple iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A04CD57243E607300E53F2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A04CD59243E607300E53F2A /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
-		9A04CD5B243E607300E53F2A /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		9A04CD5B243E607300E53F2A /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		9A04CD5E243E607300E53F2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9A04CD60243E607400E53F2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A04CD63243E607400E53F2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,6 +82,10 @@
 		9AD4F743243EDCDF0075A198 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AD4F745243EDCFC0075A198 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AD4F749243EDE610075A198 /* ApiTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTools.swift; sourceTree = "<group>"; };
+		9AD4F74B243F7AC30075A198 /* PhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewCell.swift; sourceTree = "<group>"; };
+		9AD4F74C243F7AC30075A198 /* PhotoViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoViewCell.xib; sourceTree = "<group>"; };
+		9AD4F74F243F7D6A0075A198 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		9AD4F751243F8A360075A198 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AECA0EB851A9404BFD39E924 /* Pods-Simple iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Simple iOSTests/Pods-Simple iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CA93598779A7216AE7A63483 /* Pods-Simple iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple iOS.release.xcconfig"; path = "Target Support Files/Pods-Simple iOS/Pods-Simple iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,6 +179,7 @@
 				9A04CD62243E607400E53F2A /* LaunchScreen.storyboard */,
 				9A04CD65243E607400E53F2A /* Info.plist */,
 				9AD4F749243EDE610075A198 /* ApiTools.swift */,
+				9AD4F751243F8A360075A198 /* Extensions.swift */,
 			);
 			path = "Simple iOS";
 			sourceTree = "<group>";
@@ -200,6 +209,8 @@
 				9A04CD8D243E6A1E00E53F2A /* AlbumViewCell.xib */,
 				9AD4F730243E7BCA0075A198 /* LoadingViewCell.swift */,
 				9AD4F731243E7BCA0075A198 /* LoadingViewCell.xib */,
+				9AD4F74B243F7AC30075A198 /* PhotoViewCell.swift */,
+				9AD4F74C243F7AC30075A198 /* PhotoViewCell.xib */,
 			);
 			path = ViewCells;
 			sourceTree = "<group>";
@@ -208,7 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				9A04CD59243E607300E53F2A /* AlbumsViewController.swift */,
-				9A04CD5B243E607300E53F2A /* SecondViewController.swift */,
+				9A04CD5B243E607300E53F2A /* PhotosViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				9AD4F741243EDAC80075A198 /* Album.swift */,
+				9AD4F74F243F7D6A0075A198 /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -331,6 +343,7 @@
 			files = (
 				9A04CD93243E6FA500E53F2A /* Podfile in Resources */,
 				9A04CD64243E607400E53F2A /* LaunchScreen.storyboard in Resources */,
+				9AD4F74E243F7AC30075A198 /* PhotoViewCell.xib in Resources */,
 				9A04CD61243E607400E53F2A /* Assets.xcassets in Resources */,
 				9AD4F733243E7BCA0075A198 /* LoadingViewCell.xib in Resources */,
 				9A04CD8F243E6A1E00E53F2A /* AlbumViewCell.xib in Resources */,
@@ -445,13 +458,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A04CD5C243E607300E53F2A /* SecondViewController.swift in Sources */,
+				9A04CD5C243E607300E53F2A /* PhotosViewController.swift in Sources */,
 				9A04CD58243E607300E53F2A /* AppDelegate.swift in Sources */,
+				9AD4F74D243F7AC30075A198 /* PhotoViewCell.swift in Sources */,
 				9A04CD8E243E6A1E00E53F2A /* AlbumViewCell.swift in Sources */,
+				9AD4F750243F7D6A0075A198 /* Photo.swift in Sources */,
 				9A04CD5A243E607300E53F2A /* AlbumsViewController.swift in Sources */,
 				9AD4F74A243EDE610075A198 /* ApiTools.swift in Sources */,
 				9A04CD91243E6F0700E53F2A /* ParallaxHeader.swift in Sources */,
 				9AD4F732243E7BCA0075A198 /* LoadingViewCell.swift in Sources */,
+				9AD4F752243F8A360075A198 /* Extensions.swift in Sources */,
 				9AD4F742243EDAC80075A198 /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

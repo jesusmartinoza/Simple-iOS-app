@@ -11,6 +11,7 @@ import UIKit
 class AlbumViewCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
+    var album = Album()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,7 @@ class AlbumViewCell: UITableViewCell {
     }
     
     func setData(album: Album) {
+        self.album = album
         title.text = album.title
     }
     

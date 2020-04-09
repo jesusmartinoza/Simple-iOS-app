@@ -14,7 +14,7 @@ class AlbumsViewController: UIViewController {
     @IBOutlet weak var albumsTableView: UITableView!
     
     var isLoading = false
-    var itemsArray = [Album]()
+    var albums = [Album]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,23 +46,18 @@ class AlbumsViewController: UIViewController {
         self.albumsTableView.register(tableViewLoadingCellNib, forCellReuseIdentifier: "loadingCellId")
     }
     
-    func loadData() {
-        self.isLoading = false
-        
-        Album.getAllFromAPI(onCompletion : { response in
-            self.itemsArray.append(contentsOf: response)
-            self.albumsTableView.reloadData()
-        })
-    }
     
-    func loadMoreData() {
+    /**
+    Fetch and handle infinity scroll
+    */
+    func loadData() {
         if !self.isLoading {
             self.isLoading = true
             DispatchQueue.global().async {
                 sleep(1) // A little more of time to see the animation
-                Album.getAllFromAPI(start: self.itemsArray.count, onCompletion : { response in
-                    self.itemsArray.append(contentsOf: response)
+                Album.fetch(start: self.albums.count, onCompletion : { response in
                     self.isLoading = false
+                    self.albums.append(contentsOf: response)
                     self.albumsTableView.reloadData()
                 })
             }
@@ -81,7 +76,7 @@ extension AlbumsViewController : UITableViewDataSource, UITableViewDelegate {
         let contentHeight = scrollView.contentSize.height
         
         if (offsetY > contentHeight - scrollView.frame.height * 4) && !isLoading {
-            loadMoreData()
+            loadData()
         }
         
         parallaxHeader.layoutHeaderViewForScrollViewOffset(scrollView.contentOffset)
@@ -90,7 +85,7 @@ extension AlbumsViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             // Return the amount of albums
-            return itemsArray.count
+            return albums.count
         } else if section == 1 {
             // Return the Loading cell
             return 1
@@ -108,10 +103,21 @@ extension AlbumsViewController : UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        if indexPath.section == 0 {
+            let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+            let photosViewController = storyBoard.instantiateViewController(withIdentifier: "photosView") as! PhotosViewController
+            photosViewController.album = albums[indexPath.row]
+            
+            self.navigationController?.pushViewController(photosViewController, animated: true)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "albumViewCell", for: indexPath) as! AlbumViewCell
-            cell.setData(album: itemsArray[indexPath.row])
+            cell.setData(album: albums[indexPath.row])
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "loadingCellId", for: indexPath) as! LoadingViewCell
