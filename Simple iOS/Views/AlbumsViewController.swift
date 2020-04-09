@@ -18,6 +18,8 @@ class AlbumsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Simple iOS"
+        
         // Setup header
         albumsTableView.tableHeaderView = parallaxHeader.parallaxHeaderViewWithImage(
             UIImage(named: "albums")!,

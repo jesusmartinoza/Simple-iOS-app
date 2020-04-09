@@ -6,8 +6,8 @@ target 'Simple iOS' do
   use_frameworks!
 
   # Pods for Simple iOS
-  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
-  pod 'Alamofire', '~> 4.9.1'
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git' # Used for animation
+  pod 'Alamofire', '~> 4.9.1' # Used for HTTP requests
   #pod 'SwiftyJSON', '~> 4.0' Not necessary, project with small JSON schema
 
   target 'Simple iOSTests' do

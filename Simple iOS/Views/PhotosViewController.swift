@@ -18,6 +18,7 @@ class PhotosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = album?.title
         registerViewCells()
         loadData()
     }
@@ -53,7 +54,6 @@ extension PhotosViewController: UICollectionViewDataSource, UICollectionViewDele
         
         return cell
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == photos.count - 2 && !self.isLoading {

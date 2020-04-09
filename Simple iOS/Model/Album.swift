@@ -32,6 +32,7 @@ class Album {
     init(json: Dictionary<String, Any>) {
         id = json["id"] as! Int
         title = json["title"] as! String
+        userId = json["userId"] as! Int
     }
     
     /**

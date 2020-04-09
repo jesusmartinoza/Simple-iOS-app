@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ API helpful tools
+ */
 class ApiTools {
     static var BASE_URL = "https://jsonplaceholder.typicode.com"
 }

@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/**
+ Class to generate a header on list
+ */
 open class ParallaxHeader {
     
     var headerView: UIView!
