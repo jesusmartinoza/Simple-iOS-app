@@ -14,7 +14,7 @@ class AlbumsViewController: UIViewController {
     @IBOutlet weak var albumsTableView: UITableView!
     
     var isLoading = false
-    var itemsArray = [String]()
+    var itemsArray = [Album]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,27 +49,22 @@ class AlbumsViewController: UIViewController {
     func loadData() {
         self.isLoading = false
         
-        for i in 0...20 {
-            itemsArray.append("Item \(i)")
-        }
-        self.albumsTableView.reloadData()
+        Album.getAllFromAPI(onCompletion : { response in
+            self.itemsArray.append(contentsOf: response)
+            self.albumsTableView.reloadData()
+        })
     }
     
     func loadMoreData() {
         if !self.isLoading {
             self.isLoading = true
-            let start = itemsArray.count
-            let end = start + 16
             DispatchQueue.global().async {
-                // fake background loading task
-                sleep(2)
-                for i in start...end {
-                    self.itemsArray.append("Item \(i)")
-                }
-                DispatchQueue.main.async {
-                    self.albumsTableView.reloadData()
+                sleep(1) // A little more of time to see the animation
+                Album.getAllFromAPI(start: self.itemsArray.count, onCompletion : { response in
+                    self.itemsArray.append(contentsOf: response)
                     self.isLoading = false
-                }
+                    self.albumsTableView.reloadData()
+                })
             }
         }
     }

@@ -23,8 +23,8 @@ class AlbumViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setData(album: String/*Album*/) {
-        title.text = album
+    func setData(album: Album) {
+        title.text = album.title
     }
     
 }
